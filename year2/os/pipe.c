@@ -1,3 +1,15 @@
+/************************************************************************************************************************
+ * 1. This programe runs only on POSIX-API/Threads(All POSIX based os like Unix,linux,bsd,netbsd,Mac(also unix based)   *
+ * and Termux(andriod > which is based on Linux)                                                                        *
+ * =====================================================================================================================*
+ * 2.Cygwin compiler(Cygwin is a POSIX-compatible environment that emulates(*not native) POSIX threads on Windows os)   * 
+ * make this progrm run in WINDOWS OS(Download here : https://cygwin.com/setup-x86_64.exe)                              *                                                                      *                                            *
+ * =====================================================================================================================*
+ * 3. Creating Pipes in Windows Os(natively) need Microsoft Visual C++ (often abbreviated to MSVC) and implementation of*
+ *  pipes is totally diffrent from Posix based os.(Check here : https://docs.microsoft.com/en-us/windows/win32/ipc/pipes*                                                                                                           *
+ ************************************************************************************************************************
+ */
+
 #include<stdio.h>
 #include<sys/types.h>
 #include<string.h>
