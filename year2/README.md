@@ -2,7 +2,7 @@
 ###### 2<sup>nd</sup>(Year):1<sup>st</sup>(Sem.)(CS305PC)
 This is a **Reference** repository Created by me for **C++** programing language.
 ## ⚠️Caution :
-- All programs are written on/for **g++(c++17& above)** compiler so they won't run on **Turbo C++**.
+- All programs are written on/for **g++(c++17& above)** compiler so they may not work on **Turbo C++**.
 - These programs runs on gcc/g++,MinGW(x86),MinGW-W64(x64),Clang,MSVC Compilers.
 ### How to Compile C/C++ files in an android device :
 0. **Before get started**, Termux is an Android terminal emulator and Linux environment app that works directly with no          rooting or setup required.
