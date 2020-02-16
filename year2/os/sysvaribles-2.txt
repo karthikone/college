@@ -1,0 +1,23 @@
+INclude
+
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\VS\UnitTest\include\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\VS\UnitTest\include\v150\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\include\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\include\cliext\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\include\CodeAnalysis\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\include\cvt\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\include\experimental\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\include\Mainfest\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\include\mscir\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\cppwinrt\winrt\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\cppwinrt\winrt\impl\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ndis\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\netcx\shared\1.0\net\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\alljoyn_c\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\gl\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\qcc\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\qcc\windows\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt\wrl\;C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt\wrl\wrappers\;
+
+
+LIB
+
+C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt\x64\;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt_enclave\x64\;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\x64\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\VS\UnitTest\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\lib\x64\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\lib\x64\store\;
+
+path
+
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\DIA SDK\bin\amd64\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\15.0\Bin\Roslyn\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\;C:\Program Files (x86)\Windows Kits\10\bin\x64\;C:\Program Files (x86)\Windows Kits\10\bin\x64\XamlDiagnostics\;C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\bin\Hostx64\x64\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\DIA SDK\bin\arm64\;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.24.28314\bin\Hostx64\x64\cl.exe;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\;
+
+
+"code-runner.executorMap": {
+        "cpp": "cd $dir && cl /EHsc $fileName && cls && $dir$fileNameWithoutExt && del $dir$fileNameWithoutExt.obj $dir$fileNameWithoutExt.exe",
+        "c": "cd $dir && cl $fileName && cls && $dir$fileNameWithoutExt && del $dir$fileNameWithoutExt.obj $dir$fileNameWithoutExt.exe"
+    },
+
+"code-runner.executorMap": {
+        "cpp": "cd $dir ; cl /EHsc $fileName ; cls ; ./$fileNameWithoutExt.exe ; del $fileNameWithoutExt.obj,$fileNameWithoutExt.exe",
+        "c": "cd $dir ; cl $fileName && cls ; ./$fileNameWithoutExt ; del $fileNameWithoutExt.obj,$fileNameWithoutExt.exe"
+    },
