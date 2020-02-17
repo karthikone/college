@@ -2,5 +2,5 @@
 int main()
 {
     std::cout<<"Testing compile and git push automation.";
-    return 0;
+    return 0
 }
