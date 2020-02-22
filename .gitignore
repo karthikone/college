@@ -1,1 +1,6 @@
-*.class ,*.exe ,*.obj
+##################################
+# ignoring binary and .exe files #
+##################################
+*.class 
+*.exe
+*.obj
