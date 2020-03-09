@@ -1,3 +1,5 @@
+
+//parameterized constructor
 class person
 {
     String name;
