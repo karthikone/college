@@ -1,5 +1,8 @@
 #include<stdio.h>
+<<<<<<< HEAD
 #include<conio.h>
+=======
+>>>>>>> 4096dd7d760ecdfb9576d71b35bb24558632dd89
 void main()
 {
     int i,j,n,bu[10],wa[10],tat[10],t,ct[10],max;
