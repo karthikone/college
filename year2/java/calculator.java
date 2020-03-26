@@ -1,135 +1,144 @@
-import java.awt.event.*; 
-import javax.swing.*; 
-import java.awt.*; 
-class calculator extends JFrame implements ActionListener {  
-	static JFrame f;  
-	static JTextField l;
-	String s0, s1, s2; 
-	calculator() 
-	{ 
-		s0 = s1 = s2 = ""; 
-	} 
-	public static void main(String args[]) 
-	{ 
-		f = new JFrame("calculator"); 
-
-		try { 
-		
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); 
-		} 
-		catch (Exception e) { 
-			System.err.println(e.getMessage()); 
-		} 
-		calculator c = new calculator(); 
-		l = new JTextField(16); 
-		l.setEditable(false); 
-		JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, ba, bs, bd, bm, be, beq, beq1; 
-		b0 = new JButton("0"); 
-		b1 = new JButton("1"); 
-		b2 = new JButton("2"); 
-		b3 = new JButton("3"); 
-		b4 = new JButton("4"); 
-		b5 = new JButton("5"); 
-		b6 = new JButton("6"); 
-		b7 = new JButton("7"); 
-		b8 = new JButton("8"); 
-		b9 = new JButton("9"); 
-		beq1 = new JButton("="); 
-		ba = new JButton("+"); 
-		bs = new JButton("-"); 
-		bd = new JButton("/"); 
-		bm = new JButton("*"); 
-		beq = new JButton("C"); 
-		be = new JButton("."); 
-		JPanel p = new JPanel(); 
-		bm.addActionListener(c); 
-		bd.addActionListener(c); 
-		bs.addActionListener(c); 
-		ba.addActionListener(c); 
-		b9.addActionListener(c); 
-		b8.addActionListener(c); 
-		b7.addActionListener(c); 
-		b6.addActionListener(c); 
-		b5.addActionListener(c); 
-		b4.addActionListener(c); 
-		b3.addActionListener(c); 
-		b2.addActionListener(c); 
-		b1.addActionListener(c); 
-		b0.addActionListener(c); 
-		be.addActionListener(c); 
-		beq.addActionListener(c); 
-		beq1.addActionListener(c); 
-		p.add(l); 
-		p.add(ba); 
-		p.add(b1); 
-		p.add(b2); 
-		p.add(b3); 
-		p.add(bs); 
-		p.add(b4); 
-		p.add(b5); 
-		p.add(b6); 
-		p.add(bm); 
-		p.add(b7); 
-		p.add(b8); 
-		p.add(b9); 
-		p.add(bd); 
-		p.add(be); 
-		p.add(b0); 
-		p.add(beq); 
-		p.add(beq1); 
-		p.setBackground(Color.blue); 
-		f.add(p); 
-		f.setSize(200, 220); 
-		f.show(); 
-	} 
-	public void actionPerformed(ActionEvent e) 
-	{ 
-		String s = e.getActionCommand(); 
-		if ((s.charAt(0) >= '0' && s.charAt(0) <= '9') || s.charAt(0) == '.') { 
-			if (!s1.equals("")) 
-				s2 = s2 + s; 
-			else
-				s0 = s0 + s; 
-			l.setText(s0 + s1 + s2); 
-		} 
-		else if (s.charAt(0) == 'C') { 
-			s0 = s1 = s2 = ""; 
-			l.setText(s0 + s1 + s2); 
-		} 
-		else if (s.charAt(0) == '=') { 
-
-			double te; 
-			if (s1.equals("+")) 
-				te = (Double.parseDouble(s0) + Double.parseDouble(s2)); 
-			else if (s1.equals("-")) 
-				te = (Double.parseDouble(s0) - Double.parseDouble(s2)); 
-			else if (s1.equals("/")) 
-				te = (Double.parseDouble(s0) / Double.parseDouble(s2)); 
-			else
-				te = (Double.parseDouble(s0) * Double.parseDouble(s2)); 
-			l.setText(s0 + s1 + s2 + "=" + te); 
-			s0 = Double.toString(te); 
-
-			s1 = s2 = ""; 
-		} 
-		else { 
-			if (s1.equals("") || s2.equals("")) 
-				s1 = s;
-			else { 
-				double te; 
-				if (s1.equals("+")) 
-					te = (Double.parseDouble(s0) + Double.parseDouble(s2)); 
-				else if (s1.equals("-")) 
-					te = (Double.parseDouble(s0) - Double.parseDouble(s2)); 
-				else if (s1.equals("/")) 
-					te = (Double.parseDouble(s0) / Double.parseDouble(s2)); 
-				else
-					te = (Double.parseDouble(s0) * Double.parseDouble(s2)); 
-				s0 = Double.toString(te); 
-				s1 = s; 
-				s2 = ""; 
-			} 
-			l.setText(s0 + s1 + s2); 
-		} 
-	} 
-} 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Calculator extends JApplet
+{
+    public void init()
+    {
+        CalculatorPanel calc = new CalculatorPanel();
+        getContentPane().add(calc);
+    }
+}
+class CalculatorPanel extends JPanel implements ActionListener
+{
+    JButton n1,n2,n3,n4,n5,n6,n7,n8,n9,n0,plus,minus,mul,div,dot,equal;
+    static JTextField result = new JTextField("0",45);
+    static String lastCommand = null;
+    JOptionPane p =new JOptionPane();
+    double preRes = 0, secVal = 0,res;
+    private static void assign(String no)
+    {
+        if((result.getText()).equals("0"))       
+            result.setText(no); 
+            else if(lastCommand =="=")
+            {
+                    result.setText(no);
+                    lastCommand = null;
+            }
+            else
+            result.setText(result.getText()+no);
+    }
+        
+ public CalculatorPanel()
+    {
+        setLayout(new BorderLayout());
+        result.setEditable(false);
+        result.setSize(300,200);
+        add(result,BorderLayout.NORTH);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(4,4));
+        n7 = new JButton("7");
+        panel.add(n7);
+        n7.addActionListener(this);
+        n8 = new JButton("8");
+        panel.add(n8);
+        n8.addActionListener(this);
+        n9=new JButton("9");
+        panel.add(n9);
+        n9.addActionListener(this);
+        div = new JButton("/");
+        panel.add(div);
+        div.addActionListener(this);
+        n4 = new JButton("4");
+        panel.add(n4);
+        n4.addActionListener(this);
+        n5 =new JButton ("5");
+        panel.add(n5);
+        n5.addActionListener(this);
+        n6 = new JButton("6");
+        panel.add(n6);
+        n6.addActionListener(this);
+        mul= new JButton("*");
+        panel.add(mul);
+        mul.addActionListener(this);
+        n1 = new JButton("1");
+        panel.add(n1);
+        n1.addActionListener(this);
+        n2 = new JButton("2");
+        panel.add(n2);
+        n2.addActionListener(this);
+        n3 = new JButton("3");
+        panel.add(n3);
+        n3.addActionListener(this);
+        minus = new JButton("-");
+        minus.addActionListener(this);
+        dot =new JButton(".");
+        panel.add(dot);
+        minus.addActionListener(this);
+        n0 = new JButton("0");
+        panel.add(n0);
+        n0.addActionListener(this);
+        equal = new JButton("=");
+        panel.add(equal);
+        equal.addActionListener(this);
+        plus = new JButton("+");
+        panel.add(plus);
+        plus.addActionListener(this);
+        add(panel,BorderLayout.CENTER);
+    }
+    public void actionPerformed(ActionEvent ae)
+    {
+             if(ae.getSource()==n1)assign("1");
+        else if(ae.getSource()==n2)assign("2");
+        else if(ae.getSource()==n3)assign("3");
+        else if(ae.getSource()==n4)assign("4");
+        else if(ae.getSource()==n5)assign("5");
+        else if(ae.getSource()==n6)assign("6");
+        else if(ae.getSource()==n7)assign("7");
+        else if(ae.getSource()==n8)assign("8");
+        else if(ae.getSource()==n9)assign("9");
+        else if(ae.getSource()==n0)assign("0");
+        else if(ae.getSource()==dot)
+        {
+            if(((result.getText()).indexOf("."))==-1)
+            result.setText(result.getText()+ ".");
+        }
+        else if(ae.getSource()==minus)
+        {
+            preRes = Double.parseDouble(result.getText());
+            lastCommand = "-";
+            result.setText("0");
+        }
+        else if(ae.getSource()==div)
+        {
+            preRes=Double.parseDouble(result.getText());
+            lastCommand = "/";
+            result.setText("0");
+        }
+        else if(ae.getSource()==equal)
+        {
+            secVal = Double.parseDouble(result.getText());
+            if(lastCommand.equals("/"))
+            res = preRes/secVal;
+            else if (lastCommand.equals("-"))
+            res = preRes-secVal;
+            else if (lastCommand.equals("+"))
+            res = preRes+secVal;
+            result.setText(""+res);
+            lastCommand = " = ";
+        }
+        else if (ae.getSource()==mul)
+        {
+            preRes = Double.parseDouble(result.getText());
+            lastCommand = "*";
+            result.setText("0");
+        }
+        else if(ae.getSource()==plus)
+        {
+            preRes = Double.parseDouble(result.getText());
+            lastCommand = "+";
+            result.setText("0");
+        }
+   }
+   
+}
