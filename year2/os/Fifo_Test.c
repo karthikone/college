@@ -8,7 +8,7 @@
 int main()
 {
 	int fd1;
-	char  * myfifo = "/home/karthik/code/test.txt";
+	char  * myfifo = "/home/kone/code/local/file.txt";
 	mkfifo(myfifo, 0666);
 	char str1[80],str2[80],Conformation_Flag;
 	
@@ -19,22 +19,24 @@ int main()
 		close(fd1);
 		printf("Edit? (y/n) : ");
 		scanf("%c",&Conformation_Flag);
-		printf("Enter the String : ");
 		if(Conformation_Flag == 'y')
 		{	
 			fgetc(stdin);
-			fd1 = open(myfifo,O_WRONLY);			
+			fd1 = open(myfifo,O_WRONLY);	
+			printf("Enter the String : ");		
 			fgets(str2,80,stdin);			
 			write(fd1,str2 ,strlen(str2)+1);			
 			close(fd1);
 		}
 		else if(Conformation_Flag == 'n')
 		{
+			printf("\n");
 			exit(0);
+
 		}
 		else
 		{
-			printf("Invalid Option!");
+			printf("Invalid Option!\n");
 		}
 	             
 
